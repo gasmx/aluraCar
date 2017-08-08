@@ -7,7 +7,8 @@ import { EscolhaPage } from '../escolha/escolha';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+
 })
 export class HomePage implements OnInit {
 
@@ -30,7 +31,7 @@ export class HomePage implements OnInit {
       .get('http://aluracar.herokuapp.com/')
       .map(res => res.json())
       .toPromise()
-      .then(carros => {          
+      .then(carros => {
         this.carros = carros;
         loader.dismiss();
       })
