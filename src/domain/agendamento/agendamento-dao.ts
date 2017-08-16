@@ -31,7 +31,7 @@ export class AgendamentoDao {
 
         return this._storage.forEach(rs => {
             let carro = new Carro(rs.carro.nome, rs.carro.preco);
-            let agendamento = new Agendamento(carro, rs.valor, rs.endereco, rs.email, rs.data, rs.confirmado);
+            let agendamento = new Agendamento(carro, rs.valor, rs.nome, rs.endereco, rs.email, rs.data, rs.confirmado);
             agendamentos.push(agendamento);            
         })
         .then(() => agendamentos)
