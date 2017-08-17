@@ -6,7 +6,10 @@ import { EscolhaPage } from '../pages/escolha/escolha';
 import { CadastroPage } from '../pages/cadastro/cadastro';
 import { AgendamentosPage } from '../pages/agendamentos/agendamentos';
 import { AgendamentoService } from '../domain/agendamento/agendamento-service';
+import { UsuarioService } from '../domain/usuario/usuario-service';
 import { AgendamentoDao } from '../domain/agendamento/agendamento-dao';
+import { LoginPage } from '../pages/login/login';
+import { PerfilPage } from '../pages/perfil/perfil';
 import { Storage } from '@ionic/storage';
 
 import 'rxjs/add/operator/map';
@@ -25,7 +28,9 @@ function provideStorage() {
     HomePage, 
     EscolhaPage, 
     CadastroPage,
-    AgendamentosPage
+    AgendamentosPage,
+    LoginPage,
+    PerfilPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -36,12 +41,15 @@ function provideStorage() {
     HomePage, 
     EscolhaPage, 
     CadastroPage,
-    AgendamentosPage
+    AgendamentosPage,
+    LoginPage,
+    PerfilPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler}, 
     AgendamentoService,
     AgendamentoDao,
+    UsuarioService,
     { provide: Storage, useFactory: provideStorage }
   ]
 })
